@@ -33,6 +33,7 @@ def start_button_click():
 
 root = tkinter.Tk()
 root.title('Traveling dot')
+
 # Выпадающее меню выбора скорости точки
 lbl1 = tkinter.Label(root, text='Choose dot speed:')
 lbl1.pack(anchor='nw')
@@ -40,6 +41,7 @@ speed_options = tkinter.StringVar(root)
 speed_options.set('1')
 spd_opt_menu = tkinter.OptionMenu(root, speed_options, '1', '2', '3')
 spd_opt_menu.pack(anchor='nw')
+
 # Выпадющее меню выбора направления движения точки
 lbl2 = tkinter.Label(root, text='Choose direction of roration:')
 lbl2.pack(anchor='nw')
@@ -48,13 +50,16 @@ direction_options.set('Clockwise')
 drct_opt_menu = tkinter.OptionMenu(root, direction_options, 'Clockwise',
                                    'Counterclockwise')
 drct_opt_menu.pack(anchor='nw')
+
 # Кнопка запуска анимации
 start_button = tkinter.Button(text='Start', command=start_button_click)
 start_button.pack()
+
 # Поле для рисования
 size = 600
 canvas = tkinter.Canvas(root, width=size, height=size)
 canvas.pack()
+
 # Отрисовка окружности, по которой двигается точка
 r = 200
 canvas.create_oval(size//2 - r, size//2 - r, size//2 + r, size//2 + r)
